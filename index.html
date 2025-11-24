@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palletto - Image Color Palette Extractor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Left Sidebar: Thumbnails -->
+    <aside class="thumbnail-sidebar">
+      <div class="sidebar-upload-zone" id="sidebarUploadArea">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="17 8 12 3 7 8"></polyline>
+          <line x1="12" y1="3" x2="12" y2="15"></line>
+        </svg>
+        <div class="upload-text-small">Drop images here</div>
+        <div class="upload-subtext-small">or click to browse</div>
+        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+      </div>
+      
+      <div id="thumbnailSidebar" class="thumbnails-list">
+        <div class="empty-state-small">No images yet</div>
+      </div>
+    </aside>
+
+    <!-- Middle: Palettes -->
+    <main class="palettes-main">
+      <header class="main-header">
+        <h1>🎨 Palletto</h1>
+        <p>Extract color palettes from images in OKLCH format</p>
+        
+        <div class="upload-section-inline">
+          <label class="colors-input">
+            Colors per palette:
+            <input type="number" id="colorCount" value="14" min="2" max="20">
+          </label>
+          
+          <button id="clearBtn" class="secondary-btn-small">Clear All</button>
+        </div>
+      </header>
+
+      <div id="palettesContainer" class="palettes-container">
+        <div class="empty-state">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="13.5" cy="6.5" r=".5"></circle>
+            <circle cx="17.5" cy="10.5" r=".5"></circle>
+            <circle cx="8.5" cy="7.5" r=".5"></circle>
+            <circle cx="6.5" cy="12.5" r=".5"></circle>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+          </svg>
+          <h3>No Image Selected</h3>
+          <p>Upload images to extract color palettes</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Sidebar: Micro Palette -->
+    <aside class="micro-palette-sidebar" id="microPaletteContainer">
+      <div class="empty-state">256-color sample will appear here</div>
+    </aside>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
+
