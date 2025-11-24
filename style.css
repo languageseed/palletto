@@ -538,5 +538,59 @@ button {
   .palette {
     grid-template-columns: 1fr;
   }
+  
+  .credits-footer {
+    display: none;
+  }
+}
+
+/* Credits Footer */
+.credits-footer {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 0.75rem;
+  box-shadow: var(--shadow);
+  z-index: 100;
+  max-width: 200px;
+}
+
+.credits-title {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+}
+
+.credits-subtitle {
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.credits-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.credits-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+}
+
+.credits-links a:hover {
+  color: var(--text);
+  text-decoration: underline;
 }
 
